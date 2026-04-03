@@ -1,0 +1,29 @@
+
+name: Waka Readme
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: athul/waka-readme@master
+        with:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          WAKATIME_API_KEY: ${{ secrets.WAKAPI_API_KEY }}
+          API_BASE_URL: ${{ secrets.WAKATIME_API_URL }}
+          REPOSITORY: ZaynL/ZaynL
+          BLOCKS: "⣀⣄⣤⣦⣶⣷⣿"
+          TIME_RANGE: "all_time"
+          LANG_COUNT: "8"
+          SHOW_TIME: "true"
+          SHOW_TOTAL: "true"
+          IGNORED_LANGUAGES: "Binary Other YAML JSON TOML"
+          COMMIT_MESSAGE: "Update Coding Activity Stats"
+          TARGET_BRANCH: "main"
+          TARGET_PATH: "README.md"

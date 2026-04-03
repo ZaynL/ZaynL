@@ -1,0 +1,75 @@
+<svg width="600" height="450" viewBox="0 0 600 450" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --grid: #d0d7de;
+      --text: #24292f;
+      --muted: #57606a;
+      --accent: #3d5afe;
+      --accent-fill: rgba(61,90,254,0.12);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0d1117;
+        --grid: #21262d;
+        --text: #c9d1d9;
+        --muted: #8b949e;
+        --accent: #3d5afe;
+        --accent-fill: rgba(61,90,254,0.14);
+      }
+    }
+
+    .bg { fill: var(--bg); }
+    .grid { fill: none; stroke: var(--grid); stroke-width: 0.5; }
+    .axis { stroke: var(--grid); stroke-width: 0.5; }
+    .radar-fill { fill: var(--accent-fill); stroke: var(--accent); stroke-width: 1.5; }
+    .radar-dot { fill: var(--accent); }
+    .title { fill: var(--muted); font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif; font-size: 12px; letter-spacing: 1px; }
+    .label { fill: var(--text); font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif; font-size: 12px; }
+  </style>
+
+  <rect width="600" height="450" rx="12" class="bg"/>
+  <text x="300" y="30" text-anchor="middle" class="title">SKILL RADAR</text>
+
+  <g transform="translate(300,240)">
+    <polygon points="0,-150 106.1,-106.1 150,0 106.1,106.1 0,150 -106.1,106.1 -150,0 -106.1,-106.1" class="grid"/>
+    <polygon points="0,-112.5 79.5,-79.5 112.5,0 79.5,79.5 0,112.5 -79.5,79.5 -112.5,0 -79.5,-79.5" class="grid"/>
+    <polygon points="0,-75 53,-53 75,0 53,53 0,75 -53,53 -75,0 -53,-53" class="grid"/>
+    <polygon points="0,-37.5 26.5,-26.5 37.5,0 26.5,26.5 0,37.5 -26.5,26.5 -37.5,0 -26.5,-26.5" class="grid"/>
+
+    <line x1="0" y1="0" x2="0" y2="-150" class="axis"/>
+    <line x1="0" y1="0" x2="106.1" y2="-106.1" class="axis"/>
+    <line x1="0" y1="0" x2="150" y2="0" class="axis"/>
+    <line x1="0" y1="0" x2="106.1" y2="106.1" class="axis"/>
+    <line x1="0" y1="0" x2="0" y2="150" class="axis"/>
+    <line x1="0" y1="0" x2="-106.1" y2="106.1" class="axis"/>
+    <line x1="0" y1="0" x2="-150" y2="0" class="axis"/>
+    <line x1="0" y1="0" x2="-106.1" y2="-106.1" class="axis"/>
+
+    <polygon
+      class="radar-fill"
+      points="0,-135 95.5,-95.5 90,0 63.6,63.6 0,90 -74.2,74.2 -112.5,0 -74.2,-74.2"/>
+
+    <circle cx="0" cy="-135" r="4" class="radar-dot"/>
+    <circle cx="95.5" cy="-95.5" r="4" class="radar-dot"/>
+    <circle cx="90" cy="0" r="4" class="radar-dot"/>
+    <circle cx="63.6" cy="63.6" r="4" class="radar-dot"/>
+    <circle cx="0" cy="90" r="4" class="radar-dot"/>
+    <circle cx="-74.2" cy="74.2" r="4" class="radar-dot"/>
+    <circle cx="-112.5" cy="0" r="4" class="radar-dot"/>
+    <circle cx="-74.2" cy="-74.2" r="4" class="radar-dot"/>
+
+    <g class="label">
+      <text text-anchor="middle" y="-164">Cybersecurity</text>
+      <text text-anchor="start" x="118" y="-108">Threat Detection</text>
+      <text text-anchor="start" x="162" y="-2">Formal Verification</text>
+      <text text-anchor="start" x="162" y="14">&amp; Privacy</text>
+      <text text-anchor="start" x="118" y="116">XAI / Trustworthy ML</text>
+      <text text-anchor="middle" y="180">NLP &amp; Multimodal</text>
+      <text text-anchor="end" x="-118" y="116">LLM Systems</text>
+      <text text-anchor="end" x="-162" y="4">Cloud &amp; Infra</text>
+      <text text-anchor="end" x="-118" y="-108">Generative AI</text>
+    </g>
+  </g>
+</svg>
